@@ -1,18 +1,21 @@
 <script>
+    export let pieceCount;
     export let name;
-    // export let price;
-    // export let description;
+    export let price;
     export let id;
 </script>
 
-<a href={`/shop/${id}`} class="block">
-    <div
-        class="max-w-sm cursor-pointer overflow-hidden rounded-lg border border-gray-200 bg-white shadow-md transition-shadow duration-300 hover:shadow-lg"
-    >
-        <div class="p-6">
-            <h2 class="mb-2 text-xl font-semibold text-gray-800">{name}</h2>
-            <!-- <p class="mb-2 text-gray-600">{price}</p> -->
-            <!-- <p class="mb-4 text-gray-600">{description}</p> -->
+<a class="card-link" href={`/shop/${id}`}>
+    <div class="product-card">
+        <img src="/images/orchid.png" alt="{name}" />
+        <div class="product-info">
+            <div class="piece-count">
+                <img src="/images/lego-piece.png" alt="Lego Piece" />
+                <p>{pieceCount}</p>
+            </div>
+            <h4>{name}</h4>
+            <h6>{price}</h6>
         </div>
+        <button class="add-to-cart"><img src="/images/shopping-bag.png" alt="Shopping Bag"/><h6>Add to Bag</h6></button>
     </div>
 </a>

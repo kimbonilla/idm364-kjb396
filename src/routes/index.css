@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'poppins-bold';
+    src: url('/fonts/poppins-bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'poppins-semibold';
+    src: url('/fonts/poppins-semibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'worksans';
+    src: url('/fonts/worksans.ttf') format('truetype');
+}
+
 :root {
     --white: #F5F5F5;
     --light-gray: #E4E4E4;
@@ -8,14 +23,77 @@
     --blue:#42789E;
 }
 
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
-
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html, body {
+    background-color: var(--light-gray);
+}
+
+h1, h2, h3 {
+    font-family: 'poppins-bold';
+    text-transform: capitalize;
+}
+
+h4, h5, h6 {
+    font-family: 'poppins-semibold';
+    text-transform: capitalize;
+}
+
+h1 {
+    font-size: 48px;
+    letter-spacing: -0.48px;
+}
+
+h2 {
+    font-size: 40px;
+    letter-spacing: -0.4px;
+}
+
+h3 {
+    font-size: 36px;
+    letter-spacing: -0.36px;
+}
+
+h4 {
+    font-size: 24px;
+    letter-spacing: -0.24px;
+}
+
+h5 {
+    font-size: 20px;
+    letter-spacing: -0.2px;
+}
+
+h6 {
+    font-size: 16px;
+    letter-spacing: -0.16px;
+}
+
+p {
+    font-family: 'worksans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: -0.08px;
+}
+
+p b {
+    font-family: 'worksans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: -0.08px;
+}
+
+.center-text {
+    text-align: center;
+    margin: auto;
 }
 
 /*header*/
@@ -28,6 +106,7 @@ header {
 }
 
 header a{
+    font-family: 'poppins-bold';
     color: var(--white);
     text-decoration: underline solid transparent;
     transition: text-decoration 0.2s ease;
@@ -38,7 +117,6 @@ header a:hover{
 }
 
 /*nav bar*/
-/*header box*/
 .top-nav {
     display: flex;
     flex-direction: row;
@@ -176,4 +254,98 @@ header a:hover{
         height: 100%;
         line-height: 46px;
     }
+}
+
+/*product card*/
+.card-link {
+    width: fit-content;
+    margin: 24px;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    row-gap: 16px; 
+    background-color: var(--white);
+    border-radius: 24px;
+    border: 1px solid var(--green);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 24px;
+    width: 290px;
+    height: 448px;
+}
+
+.product-card img {
+    height: 200px;
+    width: auto;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 8px;
+    width: 100%;
+    padding: 4px 0;
+    border-top: 2px solid var(--black);
+}
+
+.piece-count {
+    display: flex;
+    flex-direction: row;
+    column-gap: 4px;
+}
+
+.piece-count img {
+    height: 30px;
+    width: 30px;
+}
+
+.product-info h4 {
+    width: 100%;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.add-to-cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 12px;
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.add-to-cart img {
+    height: 30px;
+    width: 30px;
+}
+
+/*shop page*/
+.shop-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px;
+    margin: 0;
+}
+
+.shop-page .products-display {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
