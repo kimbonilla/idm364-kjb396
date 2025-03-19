@@ -1,8 +1,7 @@
 <script>
-    export let pieceCount;
-    export let name;
-    export let price;
-    export let id;
+    import { addToBag } from '$lib/cartServices.js';
+    export let id, name, price, pieceCount, image;
+    const product = { id, name, price, pieceCount, image };
 </script>
 
 <a class="card-link" href={`/shop/${id}`}>
@@ -16,6 +15,9 @@
             <h4>{name}</h4>
             <h6>{price}</h6>
         </div>
-        <button class="add-to-cart"><img src="/images/shopping-bag.png" alt="Shopping Bag"/><h6>Add to Bag</h6></button>
+        <button on:click|preventDefault={() => addToBag(product)} class="add-to-cart">
+            <img src="/images/shopping-bag.png" alt="Shopping Bag"/>
+            <h6>Add to Bag</h6>
+        </button>
     </div>
 </a>

@@ -1,16 +1,13 @@
 <script>
     export let data;
-
-    // Debugging data
     console.log('Product data:', data);
-
-    // Error handling
     $: product = data?.product || {};
     $: {
         if (!data?.product) {
             console.error('No product data available');
         }
     }
+    import { addToBag } from '$lib/cartServices.js';
 </script>
 
 <!-- Add error state UI -->
@@ -23,6 +20,9 @@
         <p>{product.pieceCount}</p>
     </div>
     <p>{product.description}</p>
-    <button class="add-to-cart"><img src="/images/shopping-bag.png" alt="Shopping Bag"/><h6>Add to Bag</h6></button>
+    <button class="add-to-cart" on:click={() => addToBag(product)}>
+        <img src="/images/shopping-bag.png" alt="Shopping Bag" />
+        <h6>Add to Bag</h6>
+    </button>
     <a href="/shop">← Continue Shopping</a>
 </div>

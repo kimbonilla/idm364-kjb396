@@ -1,7 +1,7 @@
 <script>
     import Card from '$lib/Card.svelte';
-
     export let data;
+    import { addToBag } from '$lib/cartServices.js';
 </script>
 
 <div class="shop-page">
