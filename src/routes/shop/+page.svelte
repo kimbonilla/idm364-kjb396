@@ -14,6 +14,7 @@
             {#each data.products as product}
                 <Card
                     name={product.name}
+                    pieceCount={product.pieceCount}
                     price={product.price}
                     description={product.description}
                     id={product.id}

@@ -1,12 +1,10 @@
 import { createClient } from '@supabase/supabase-js';
+import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public';
 
-const supabaseUrl = 'https://ysegbctpeznspbgcmato.supabase.co';
-const supabaseKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY; // Use env variable for security
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabase = createClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY);
 
 export async function GET() {
     try {
-        // Replace 'your_table_name' with the actual table name
         const { data, error } = await supabase.from('products').select('*');
 
         if (error) throw error;
