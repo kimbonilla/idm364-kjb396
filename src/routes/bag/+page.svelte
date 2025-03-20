@@ -5,18 +5,18 @@
     import { onDestroy } from 'svelte';
     let bagItems = [];
     const unsubscribe = bag.subscribe(value => {
-    bagItems = value;
+        bagItems = value;
     });
     onDestroy(unsubscribe);
     $: total = $bag.reduce(
-    (sum, item) => sum + (parseFloat(item.price.replace('$', '')) * item.quantity),
-    0
+        (sum, item) => sum + (parseFloat(item.price.replace('$', '')) * item.quantity),
+        0
     );
     import { goto } from '$app/navigation';
     function submitOrder() {
-    latestOrder.set($bag);
-    clearBag();
-    goto('/order-confirmation');
+        latestOrder.set($bag);
+        clearBag();
+        goto('/order-confirmation');
     }
 </script>
 
@@ -26,20 +26,24 @@
         {#if bagItems.length > 0}
             <ul>
                 {#each bagItems as item}
-                    <li>
-                        <strong>{item.name}</strong> — {item.quantity} sets
-                        <br />
-                        <button on:click={() => removeFromBag(item.id)}>&dash;</button>
-                        <button on:click={() => addToBag(item)}>&plus;</button>
-                        <button on:click={() => deleteFromBag(item.id)}>Remove</button>
-                    </li>
+                    <div class="bag-item">
+                        <li>
+                            <h4><strong>{item.name}</strong> — {item.quantity} sets</h4>
+                            <br />
+                            <div class="add-remove">
+                                <button on:click={() => removeFromBag(item.id)}><h5>&dash;</h5></button>
+                                <button on:click={() => addToBag(item)}><h5>&plus;</h5></button>
+                                <button on:click={() => deleteFromBag(item.id)}><h5>Remove</h5></button>
+                            </div>
+                        </li>
+                    </div>
                 {/each}
             </ul>
             <h3>Total: ${total.toFixed(2)}</h3>
-            <button on:click={clearBag}>Clear Bag</button>
-            <button on:click={submitOrder}>Submit Order</button>
+            <button on:click={clearBag}><h5>Clear Bag</h5></button>
+            <button on:click={submitOrder}><h5>Submit Order</h5></button>
         {:else}
-            <p>Your bag is empty.</p>
+            <h5>Your bag is empty.</h5>
         {/if}
     </div>
     </div>

@@ -100,6 +100,16 @@ a {
     margin: auto;
 }
 
+.back {
+    position: fixed;
+    top: 100px;
+    left: 24px;
+    padding: 8px;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    border: 2px solid var(--green);
+}
+
 /*header*/
 header {
     position: relative;
@@ -468,12 +478,6 @@ header a:hover{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.continue-shopping {
-    position: fixed;
-    top: 100px;
-    left: 24px;
-}
-
 @media (max-width: 900px) {
     .product-page {
         flex-wrap: wrap;
@@ -485,4 +489,70 @@ header a:hover{
         width: auto;
         height: auto;
     }
+}
+
+/*bag and confirmation page*/
+.bag-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    padding: 48px;
+    margin: 0;
+}
+
+.bag-page button {
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.bag-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+}
+
+.bag-items ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bag-items li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+    border-radius: 24px;
+    border: 2px solid var(--green);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 24px;
+}
+
+.bag-items li h4{
+    width: 100%;
+    text-align: center;
+}
+
+.add-remove {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 12px;
 }

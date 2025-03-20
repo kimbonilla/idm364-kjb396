@@ -20,6 +20,5 @@
             <h6>Add to Bag</h6>
         </button>
     </div>
-    <a class="continue-shopping
-    " href="/shop"><h5>← Continue Shopping</h5></a>
+    <a class="back" href="/shop"><h5>← Continue Shopping</h5></a>
 </div>

@@ -8,22 +8,24 @@
     );
 </script>
 
-<div class="confirmation">
+<div class="bag-page">
     <h1>Order Confirmed!</h1>
-    <p>Thank you for your purchase! Here&apos;s what you ordered:</p>
-
-    {#if $latestOrder.length > 0}
-        <ul>
-            {#each $latestOrder as item}
-                <li>
-                    <strong>{item.name}</strong> — Quantity: {item.quantity}, Price: {item.price}
-                </li>
-            {/each}
-        </ul>
-        <h3>Total: ${total.toFixed(2)}</h3>
-    {:else}
-        <p>No items were found in the order.</p>
-    {/if}
-
-    <a href="/shop">Back to Shop</a>
+    <h5>Thank you for your purchase!</h5>
+    <div class="bag-items">
+        {#if $latestOrder.length > 0}
+            <ul>
+                {#each $latestOrder as item}
+                    <div class="bag-item">
+                        <li>
+                            <h4><strong>{item.name}</strong> — Quantity: {item.quantity}, Price: {item.price} each</h4>
+                        </li>
+                    </div>
+                {/each}
+            </ul>
+            <h3>Total: ${total.toFixed(2)}</h3>
+        {:else}
+            <p>No items were found in the order.</p>
+        {/if}
+    </div>
+    <a class="back" href="/shop"><h5>← Back to Shop</h5></a>
 </div>
