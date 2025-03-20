@@ -13,6 +13,7 @@
         <div class="products-display">
             {#each data.products as product}
                 <Card
+                    image={product.image}
                     name={product.name}
                     pieceCount={product.pieceCount}
                     price={product.price}

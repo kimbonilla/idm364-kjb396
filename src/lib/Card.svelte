@@ -6,7 +6,7 @@
 
 <a class="card-link" href={`/shop/${id}`}>
     <div class="product-card">
-        <img src="/images/orchid.png" alt="{name}" />
+        <img src={`/images/products/${image}`} alt="{name}" />
         <div class="product-info">
             <div class="piece-count">
                 <img src="/images/lego-piece.png" alt="Lego Piece" />

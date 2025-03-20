@@ -107,6 +107,7 @@ header {
     color: var(--white);
     width: 100%;
     box-shadow: 0px 6px 6px rgb(0, 0, 0, 0.2);
+    z-index: 10;
 }
 
 header a{
@@ -236,7 +237,7 @@ header a:hover{
     }
 
     #menu-toggle:checked ~ .menu li {
-        border: .75px solid var(--blue);
+        border: .75px solid var(--light-gray);
         height: 3em;
         padding: .5em;
         transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -286,6 +287,8 @@ header a:hover{
 .product-card img {
     height: 200px;
     width: auto;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 .product-info {
@@ -359,18 +362,19 @@ header a:hover{
 .product-page {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 24px;
     min-height: 80vh;
+    max-width: 1200px;
     padding: 48px;
     margin: auto;
 }
 
 .product-image {
-    height: 40vh;
+    min-height: 40vh;
     width: auto;
+    max-width: 100%;
 }
 
 .product-content {
@@ -379,9 +383,11 @@ header a:hover{
     justify-content: start;
     align-items: start;
     row-gap: 12px;
-    min-width: 400px;
     width: 100%;
     max-width: 850px;
+    height: 100%;
+    padding-left: 24px;
+    border-left: 4px solid var(--black);
     /*padding: 24px;
     border-radius: 24px;
     background-color: var(--white);
@@ -393,4 +399,15 @@ header a:hover{
     position: fixed;
     top: 100px;
     left: 24px;
+}
+
+@media (max-width: 900px) {
+    .product-page {
+        flex-wrap: wrap;
+    }
+
+    .product-content {
+        border-top: 4px solid var(--black);
+        border-left: 0;
+    }
 }

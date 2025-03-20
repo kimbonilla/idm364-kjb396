@@ -6,7 +6,7 @@
 
 <!-- Add error state UI -->
 <div class="product-page">
-    <img class="product-image" src="/images/orchid.png" alt="{name}"/>
+    <img class="product-image" src="/images/products/{product.image}" alt="{name}"/>
     <div class="product-content">
         <h1>{product.name}</h1>
         <h3>{product.price}</h3>
