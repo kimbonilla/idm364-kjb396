@@ -1,4 +1,6 @@
 <script>
+    export let data;
+    const product = data.product;
     import { latestOrder } from '$lib/cartServices.js';
     $: total = $latestOrder.reduce(
     (sum, item) => sum + (parseFloat(item.price.replace('$', '')) * item.quantity),

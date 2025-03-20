@@ -1,18 +1,28 @@
 <script>
-    const { data } = $props();
-    $inspect(data);
+    export let data;
+    const product = data.product;
     import Card from '$lib/Card.svelte';
+    let featuredProducts = data.products.slice(6, 10);
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit" target="_blank">svelte.dev/docs/kit</a> to read the documentation</p>
-
-{#if data.products.length > 0}
-        <ul>
-            {#each data.products as product}
-                <li>{product.name}</li>
+<div class="homepage">
+    <div class="hero">
+        <h1>Build Your Imagination, One Brick at a Time</h1>
+        <img src="/images/hero.png" alt="Lego Hero" />
+    </div>
+    <div class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="products-display">
+            {#each featuredProducts as product}
+                <Card
+                    image={product.image}
+                    name={product.name}
+                    pieceCount={product.pieceCount}
+                    price={product.price}
+                    description={product.description}
+                    id={product.id}
+                />
             {/each}
-        </ul>
-    {:else}
-        <p>No products found.</p>
-    {/if}
+        </div>
+    </div>
+</div>

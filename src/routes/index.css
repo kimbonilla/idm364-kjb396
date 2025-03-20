@@ -264,7 +264,6 @@ header a:hover{
 /*product card*/
 .card-link {
     width: fit-content;
-    margin: 24px;
     text-decoration: none;
     color: var(--black);
 }
@@ -338,6 +337,79 @@ header a:hover{
     width: 30px;
 }
 
+/*homepage*/
+.homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    padding: 48px;
+    margin: 0;
+}
+
+.homepage .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.homepage .hero h1 {
+    text-align: center;
+}
+
+.homepage .hero img {
+    max-width: 100%;
+}
+
+.homepage .featured-products {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.homepage .products-display {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 48px;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (min-width: 800px) {
+    .homepage .hero {
+        position: relative;
+    }
+    
+    .homepage .hero img {
+        position: relative;
+        float: right;
+        max-width: 70vw;
+    }
+    
+    .homepage .hero h1 {
+        position: absolute;
+        width: 50vw;
+        max-width: 600px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--black);
+        text-shadow:
+        -4px -4px 0 var(--light-gray),
+        4px -4px 0 var(--light-gray),
+        -4px  4px 0 var(--light-gray),
+        4px  4px 0 var(--light-gray),
+        -4px  0px 0 var(--light-gray),
+        4px  0px 0 var(--light-gray),
+        0px -4px 0 var(--light-gray),
+        0px  4px 0 var(--light-gray);
+        z-index: 1;
+    
+    }
+}
+
 /*shop page*/
 .shop-page {
     display: flex;
@@ -353,6 +425,7 @@ header a:hover{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 32px;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -372,9 +445,10 @@ header a:hover{
 }
 
 .product-image {
-    min-height: 40vh;
+    max-width: 30vw;
+    max-height: 70vh;
     width: auto;
-    max-width: 100%;
+    height: auto;
 }
 
 .product-content {
@@ -387,12 +461,11 @@ header a:hover{
     max-width: 850px;
     height: 100%;
     padding-left: 24px;
-    border-left: 4px solid var(--black);
-    /*padding: 24px;
+    padding: 24px;
     border-radius: 24px;
     background-color: var(--white);
     border: 2px solid var(--green);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);*/
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .continue-shopping {
@@ -406,8 +479,10 @@ header a:hover{
         flex-wrap: wrap;
     }
 
-    .product-content {
-        border-top: 4px solid var(--black);
-        border-left: 0;
+    .product-image {
+        max-width: 70vw;
+        max-height: 70vh;
+        width: auto;
+        height: auto;
     }
 }

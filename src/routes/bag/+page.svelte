@@ -1,4 +1,6 @@
 <script>
+    export let data;
+    const product = data.product;
     import { bag, addToBag, removeFromBag, deleteFromBag, clearBag, latestOrder } from '$lib/cartServices.js';
     import { onDestroy } from 'svelte';
     let bagItems = [];

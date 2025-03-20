@@ -10,7 +10,7 @@ export async function load() {
         throw new Error(`Supabase fetch failed: ${error.message}`);
     }
 
-    console.log(':white_check_mark: Fetched products:', data); // Log the fetched products
+    console.log(':white_check_mark: Fetched products:', data);
 
     return { products: data ?? [] };
 }
